@@ -1,0 +1,1 @@
+Replace techinaayra-logo.svg with your company wordmark SVG.

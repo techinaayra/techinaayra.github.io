@@ -1,0 +1,31 @@
+title: "Tech Inaayra"
+email: "techinaayra@gmail.com"
+description: "Apps & utilities that make everyday life easy."
+baseurl: ""
+url: "https://techinaayra.github.io"
+theme: "minimal-mistakes-jekyll"
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about/"
+  - title: "Features"
+    url: "/features/"
+  - title: "Apps"
+    url: "/apps/notchtasker/"
+  - title: "Privacy"
+    url: "/privacy-policy/"
+  - title: "Terms"
+    url: "/terms-of-service/"
+
+header:
+  logo: "/assets/logo/techinaayra-logo.svg"
+  logo_alt: "Tech Inaayra"
+
+footer:
+  content: "© {{ site.time | date: '%Y' }} Tech Inaayra. All Rights Reserved."

@@ -1,0 +1,1 @@
+Place your favicon files here (favicon-32.png, favicon-16.png).
