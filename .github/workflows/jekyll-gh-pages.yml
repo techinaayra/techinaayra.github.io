@@ -1,38 +1,28 @@
-name: Build & Deploy Jekyll site
-
-on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
-
-permissions:
-  pages: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 1. Check out your code
       - uses: actions/checkout@v4
 
+      # Use a supported Ruby version
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.2.8"
 
-      # 3. Install the GitHub Pages gem (includes jekyll + theme + plugins)
-      - run: |
-          gem install bundler
-          echo 'gem "github-pages", group: :jekyll_plugins' > Gemfile
-          bundle install
+      # Install GitHub Pages (includes Jekyll + Cayman theme + all whitelisted plugins)
+      - name: Install GitHub Pages gem
+        run: |
+          gem install github-pages
 
-      # 4. Build the site into ./_site
-      - run: bundle exec jekyll build --destination ./_site
+      # Build your site into ./_site
+      - name: Build site
+        run: jekyll build --destination ./_site
 
-      # 5. Verify the build output (optional debug)
-      - run: ls -R _site
+      # Debug: list what got built
+      - name: List built files
+        run: ls -R _site
 
-      # 6. Upload the built `_site` folder as the Pages artifact
+      # Upload the built folder for deployment
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -41,5 +31,4 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      # 7. Deploy the artifact to GitHub Pages
       - uses: actions/deploy-pages@v4
