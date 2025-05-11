@@ -3,8 +3,9 @@ email: "techinaayra@gmail.com"
 description: "Apps & utilities that make everyday life easy."
 baseurl: ""
 url: "https://techinaayra.github.io"
-theme: "minimal-mistakes-jekyll"
+remote_theme: "mmistakes/minimal-mistakes@4.24.1"
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
