@@ -16,10 +16,9 @@ jobs:
       # 1. Check out your code
       - uses: actions/checkout@v4
 
-      # 2. Set up Ruby (required for Jekyll)
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.x"
+        - uses: ruby/setup-ruby@v1
+          with:
+            ruby-version: "3.2.8"
 
       # 3. Install the GitHub Pages gem (includes jekyll + theme + plugins)
       - run: |
